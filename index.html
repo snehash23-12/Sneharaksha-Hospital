@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sneharaksha Hospital &mdash; Care, in rhythm</title>
+<meta name="description" content="Sneharaksha Hospital — human-centered emergency and specialty care." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+<!-- Emergency strip -->
+<div class="emergency-strip">
+  <div class="emergency-strip__left">
+    <span class="emergency-strip__pulse" aria-hidden="true"></span>
+    <p>Emergency? Call <a href="tel:+911800123456">1800-123-456 (toll-free)</a> &mdash; open every hour, every day.</p>
+  </div>
+  <div class="live-clock" id="liveClock" aria-live="off">
+    <span class="live-clock__dot" aria-hidden="true"></span>
+    <span id="liveClockDate">&mdash;</span>
+    <span class="live-clock__sep" aria-hidden="true">&middot;</span>
+    <span id="liveClockTime">&mdash;</span>
+    <span class="live-clock__status" id="liveClockStatus">&mdash;</span>
+  </div>
+</div>
+
+<!-- Nav -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap site-header__inner">
+    <a href="#top" class="brand">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M4 20 H13 L17 8 L23 32 L27 20 H36" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Sneha<em>raksha</em></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <a href="#departments">Departments</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#stories">Patient stories</a>
+      <a href="#journal">Health journal</a>
+      <a href="#contact">Visit us</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="a11yToggle" title="Increase text size" aria-pressed="false">
+        <span aria-hidden="true">A+</span>
+        <span class="sr-only">Toggle larger text</span>
+      </button>
+      <button class="icon-btn" id="themeToggle" title="Toggle dark mode" aria-pressed="false">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.4 5.4 0 0 1-7.54-7.54A9 9 0 0 0 12 3z"/></svg>
+        <span class="sr-only">Toggle dark mode</span>
+      </button>
+      <a class="btn btn--primary btn--small" href="#book">Book appointment</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow"><b>Sneharaksha Hospital &middot; Est. 2020 </b></p>
+        <h1>Care that keeps <span class="hero__ecg-word">time</span><br>with your life.</h1>
+        <p class="hero__lead">Forty-one specialties, one steady heartbeat. From a scraped knee at midnight to a scheduled surgery six months out, Sneharaksha meets you exactly where your care needs to happen.</p>
+        <div class="hero__ctas">
+          <a href="#book" class="btn btn--primary">Book an appointment</a>
+          <a href="#departments" class="btn btn--ghost">Find a department</a>
+        </div>
+        <div class="hero__quicklinks">
+          <a href="#book"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zM5 9h14v11H5V9z"/></svg>Book a visit</a>
+          <a href="#doctors"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4.4 0-8 2.2-8 5v2h16v-2c0-2.8-3.6-5-8-5z"/></svg>Find a doctor</a>
+          <a href="#departments"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M3 21V8l9-5 9 5v13h-6v-7H9v7H3z"/></svg>Departments</a>
+          <a href="tel:+911800123456" class="quicklink--sos"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>Emergency</a>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <svg class="pulse-line" id="pulseLine" viewBox="0 0 600 200" preserveAspectRatio="none">
+          <path id="pulsePath" d="M0,100 L120,100 L150,40 L180,160 L210,20 L240,100 L600,100" />
+        </svg>
+        <div class="hero__stat-card">
+          <p class="hero__stat-num" data-count="24">0</p>
+          <p class="hero__stat-label">hour emergency care</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><svg viewBox="0 0 1200 24" preserveAspectRatio="none"><path d="M0,12 L400,12 L430,2 L460,22 L490,12 L1200,12" /></svg></div>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="wrap stats__grid">
+      <div class="stat">
+        <p class="stat__num" data-count="118000">0</p>
+        <p class="stat__label">patients cared for last year</p>
+      </div>
+      <div class="stat">
+        <p class="stat__num" data-count="340">0</p>
+        <p class="stat__label">resident &amp; attending physicians</p>
+      </div>
+      <div class="stat">
+        <p class="stat__num" data-count="41">0</p>
+        <p class="stat__label">specialty departments</p>
+      </div>
+      <div class="stat">
+        <p class="stat__num" data-count="62">0</p>
+        <p class="stat__label">years serving our community</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE OF THE DAY -->
+  <section class="qotd" aria-live="off">
+    <div class="wrap qotd__inner">
+      <svg class="qotd__mark" viewBox="0 0 40 32" aria-hidden="true"><path d="M0 32V19.5Q0 9 6 4.5 12 0 18 0v6Q12 6 9.5 9.5 7 13 7 19.5H16V32H0ZM24 32V19.5Q24 9 30 4.5 36 0 42 0v6Q36 6 33.5 9.5 31 13 31 19.5H40V32H24Z"/></svg>
+      <p class="qotd__text" id="qotdText">Loading today&rsquo;s thought&hellip;</p>
+      <p class="qotd__author" id="qotdAuthor"></p>
+      <p class="qotd__label">Quote of the day &middot; refreshes each visit</p>
+    </div>
+  </section>
+
+  <!-- DEPARTMENTS -->
+  <section class="departments" id="departments">
+    <div class="wrap">
+      <p class="eyebrow">Where to go</p>
+      <h2>Point to what hurts. <span>We'll point you to the right door.</span></h2>
+
+      <div class="body-map">
+        <div class="body-map__figure">
+          <svg viewBox="0 0 200 420" class="body-map__svg" aria-hidden="true">
+            <circle class="bm-part" data-dept="neuro" cx="100" cy="40" r="28"/>
+            <rect class="bm-part" data-dept="cardiology" x="72" y="90" width="56" height="70" rx="14"/>
+            <rect class="bm-part" data-dept="orthopedics" x="40" y="100" width="22" height="90" rx="10"/>
+            <rect class="bm-part" data-dept="orthopedics" x="138" y="100" width="22" height="90" rx="10"/>
+            <rect class="bm-part" data-dept="gastro" x="78" y="165" width="44" height="55" rx="12"/>
+            <rect class="bm-part" data-dept="ortho-leg" x="80" y="225" width="18" height="120" rx="9"/>
+            <rect class="bm-part" data-dept="ortho-leg" x="102" y="225" width="18" height="120" rx="9"/>
+          </svg>
+          <p class="body-map__hint">Tap a region</p>
+        </div>
+
+        <div class="body-map__result" id="bodyMapResult">
+          <p class="eyebrow">Suggested department</p>
+          <h3 id="bmDeptName">Cardiology &amp; Vascular</h3>
+          <p id="bmDeptDesc">Chest pain, palpitations, blood pressure concerns, and long-term heart care, from first ECG to full recovery.</p>
+          <a href="#book" class="btn btn--ghost btn--small">Book with this department</a>
+        </div>
+      </div>
+
+      <div class="dept-grid">
+        <article class="dept-card" data-dept-card="cardiology">
+          <span class="dept-card__icon">&#x2665;</span>
+          <h3>Cardiology &amp; Vascular</h3>
+          <p>Full-rhythm heart care, from screening to surgery.</p>
+        </article>
+        <article class="dept-card" data-dept-card="neuro">
+          <span class="dept-card__icon">&#9889;</span>
+          <h3>Neurology</h3>
+          <p>Migraines, stroke recovery, and long-term brain health.</p>
+        </article>
+        <article class="dept-card" data-dept-card="orthopedics">
+          <span class="dept-card__icon">&#129440;</span>
+          <h3>Orthopedics</h3>
+          <p>Joints, fractures, sports injuries, spine care.</p>
+        </article>
+        <article class="dept-card" data-dept-card="gastro">
+          <span class="dept-card__icon">&#9678;</span>
+          <h3>Gastroenterology</h3>
+          <p>Digestive health, from routine screening to surgery.</p>
+        </article>
+        <article class="dept-card" data-dept-card="pediatrics">
+          <span class="dept-card__icon">&#9733;</span>
+          <h3>Pediatrics</h3>
+          <p>A calmer waiting room, built for smaller patients.</p>
+        </article>
+        <article class="dept-card" data-dept-card="maternity">
+          <span class="dept-card__icon">&#8853;</span>
+          <h3>Maternity</h3>
+          <p>Prenatal care through delivery and postpartum support.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider divider--flip" aria-hidden="true"><svg viewBox="0 0 1200 24" preserveAspectRatio="none"><path d="M0,12 L400,12 L430,2 L460,22 L490,12 L1200,12" /></svg></div>
+
+  <!-- FLOOR DIRECTORY -->
+  <section class="floors" id="floors">
+    <div class="wrap">
+      <p class="eyebrow">Wayfinding</p>
+      <h2>Know the building <span>before you arrive.</span></h2>
+
+      <div class="floor-directory">
+        <div class="floor-directory__list" id="floorList" role="tablist" aria-label="Hospital floors">
+          <button class="floor-row is-active" data-floor="5" role="tab" aria-selected="true">
+            <span class="floor-row__num">5</span>
+            <span class="floor-row__name">Administration &amp; Records</span>
+            <span class="floor-row__arrow">&#8594;</span>
+          </button>
+          <button class="floor-row" data-floor="4" role="tab" aria-selected="false">
+            <span class="floor-row__num">4</span>
+            <span class="floor-row__name">Maternity &amp; NICU</span>
+            <span class="floor-row__arrow">&#8594;</span>
+          </button>
+          <button class="floor-row" data-floor="3" role="tab" aria-selected="false">
+            <span class="floor-row__num">3</span>
+            <span class="floor-row__name">Orthopedics &amp; Physiotherapy</span>
+            <span class="floor-row__arrow">&#8594;</span>
+          </button>
+          <button class="floor-row" data-floor="2" role="tab" aria-selected="false">
+            <span class="floor-row__num">2</span>
+            <span class="floor-row__name">Cardiology &amp; Neurology</span>
+            <span class="floor-row__arrow">&#8594;</span>
+          </button>
+          <button class="floor-row" data-floor="1" role="tab" aria-selected="false">
+            <span class="floor-row__num">1</span>
+            <span class="floor-row__name">Pediatrics &amp; Gastroenterology</span>
+            <span class="floor-row__arrow">&#8594;</span>
+          </button>
+          <button class="floor-row" data-floor="0" role="tab" aria-selected="false">
+            <span class="floor-row__num">G</span>
+            <span class="floor-row__name">Emergency, Reception &amp; Pharmacy</span>
+            <span class="floor-row__arrow">&#8594;</span>
+          </button>
+        </div>
+
+        <div class="floor-directory__panel" id="floorPanel">
+          <p class="eyebrow" id="floorPanelEyebrow">Floor 5</p>
+          <h3 id="floorPanelTitle">Administration &amp; Records</h3>
+          <ul class="floor-directory__facilities" id="floorPanelFacilities">
+            <li>Patient records &amp; billing</li>
+            <li>HR &amp; hospital administration</li>
+            <li>Conference &amp; training rooms</li>
+          </ul>
+          <p class="floor-directory__hours" id="floorPanelHours">Open Mon&ndash;Sat, 9am&ndash;6pm</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"><svg viewBox="0 0 1200 24" preserveAspectRatio="none"><path d="M0,12 L400,12 L430,2 L460,22 L490,12 L1200,12" /></svg></div>
+
+  <!-- DOCTORS -->
+  <section class="doctors" id="doctors">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Meet the team</p>
+          <h2>Physicians who <span>show their work.</span></h2>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="docPrev" aria-label="Previous doctor">&#8592;</button>
+          <button class="carousel-btn" id="docNext" aria-label="Next doctor">&#8594;</button>
+        </div>
+      </div>
+
+      <div class="doctor-track-wrap">
+        <ul class="doctor-track" id="doctorTrack">
+          <li class="doctor-card">
+            
+            <img src="assets/img/cardio.jpg" alt="Dr. Amara Osei" class="doctor-card__photo">
+            <h3>Dr. Amara Osei</h3>
+            <p class="doctor-card__role">Cardiology &middot; 14 yrs</p>
+            <p class="doctor-card__note">"I want every patient to leave understanding their own heart a little better."</p>
+          </li>
+          <li class="doctor-card">
+            <img src="assets/img/neuro.jpg" alt="Dr. Michael Chen" class="doctor-card__photo">
+            <h3>Dr. Michael Chen</h3>
+            <p class="doctor-card__role">Neurology &middot; 9 yrs</p>
+            <p class="doctor-card__note">"Migraines are treatable. Most people just haven't been asked the right questions yet."</p>
+          </li>
+          <li class="doctor-card">
+            <img src="assets/img/pediatric.jpg" alt="Dr. Priya Raman" class="doctor-card__photo">
+            <h3>Dr. Priya Raman</h3>
+            <p class="doctor-card__role">Pediatrics &middot; 11 yrs</p>
+            <p class="doctor-card__note">"My real job is making sure the kid, not just the parent, isn't scared anymore."</p>
+          </li>
+          <li class="doctor-card">
+            <img src="assets/img/ortho.jpg" alt="Dr. Elias Fournier" class="doctor-card__photo">
+            <h3>Dr. Elias Fournier</h3>
+            <p class="doctor-card__role">Orthopedics &middot; 17 yrs</p>
+            <p class="doctor-card__note">"Recovery timelines are honest, not optimistic. That's how people actually heal well."</p>
+          </li>
+          <li class="doctor-card">
+            <img src="assets/img/maternity.jpg" alt="Dr. Sofia Alvarez" class="doctor-card__photo">
+            <h3>Dr. Sofia Alvarez</h3>
+            <p class="doctor-card__role">Maternity &middot; 8 yrs</p>
+            <p class="doctor-card__note">"Every birth plan should be a conversation, not a form you sign once."</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="stories" id="stories">
+    <div class="wrap">
+      <p class="eyebrow">Patient stories</p>
+      <h2>Told in their own words.</h2>
+
+      <div class="stories__viewport">
+        <blockquote class="story-slide is-active">
+          <p>"The ER nurse remembered my daughter's name the next morning when we called to check in. That's the kind of detail you don't forget."</p>
+          <cite>&mdash; Renee T., Emergency &amp; Pediatrics</cite>
+        </blockquote>
+        <blockquote class="story-slide">
+          <p>"I'd put off my knee surgery for two years out of fear. Dr. Fournier's team walked me through recovery week by week before I even agreed to a date."</p>
+          <cite>&mdash; Marcus D., Orthopedics</cite>
+        </blockquote>
+        <blockquote class="story-slide">
+          <p>"Sneharaksha's maternity ward let my partner stay every night. Small thing. Meant everything."</p>
+          <cite>&mdash; Jun L., Maternity</cite>
+        </blockquote>
+      </div>
+      <div class="stories__dots" id="storyDots"></div>
+    </div>
+  </section>
+
+  <!-- JOURNAL -->
+  <section class="journal" id="journal">
+    <div class="wrap">
+      <p class="eyebrow">Health journal</p>
+      <h2>Notes worth reading <span>before your next visit.</span></h2>
+      <div class="journal-grid">
+        <article class="journal-card">
+          <p class="journal-card__tag">Cardiology</p>
+          <h3>Blood pressure numbers, actually explained</h3>
+          <p>What "120 over 80" means, and the three readings that matter more than the top number.</p>
+          <span class="journal-card__read">5 min read</span>
+        </article>
+        <article class="journal-card">
+          <p class="journal-card__tag">Pediatrics</p>
+          <h3>The fever thresholds that warrant a call</h3>
+          <p>A simple, age-based guide for when to watch, when to call, and when to come in.</p>
+          <span class="journal-card__read">4 min read</span>
+        </article>
+        <article class="journal-card">
+          <p class="journal-card__tag">Orthopedics</p>
+          <h3>Why "rest it completely" is outdated advice</h3>
+          <p>Modern recovery science favors gentle movement over strict immobilization &mdash; here's why.</p>
+          <span class="journal-card__read">6 min read</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT BOOKING -->
+  <section class="book" id="book">
+    <div class="wrap book__inner">
+      <div class="book__intro">
+        <p class="eyebrow">Book an appointment</p>
+        <h2>Three steps. <span>No hold music.</span></h2>
+        <p class="hero__lead">Tell us who, what, and when &mdash; we'll confirm a slot with the right department before you close this tab.</p>
+        <ul class="book__reassure">
+          <li>Confirmation by SMS &amp; email</li>
+          <li>Free rescheduling up to 24h before</li>
+          <li>Interpreters available on request</li>
+        </ul>
+      </div>
+
+      <form class="book-form" id="bookForm" novalidate>
+        <div class="book-form__progress" aria-hidden="true">
+          <span class="step-dot is-active" data-step="1">1</span>
+          <span class="step-line"></span>
+          <span class="step-dot" data-step="2">2</span>
+          <span class="step-line"></span>
+          <span class="step-dot" data-step="3">3</span>
+        </div>
+
+        <!-- Step 1 -->
+        <fieldset class="book-form__step is-active" data-step-panel="1">
+          <legend>Your details</legend>
+          <label>Full name
+            <input type="text" name="fullName" required placeholder="Jordan Ellis" />
+            <span class="field-error"></span>
+          </label>
+          <label>Phone number
+            <input type="tel" name="phone" required placeholder="+91 9876543210" />
+            <span class="field-error"></span>
+          </label>
+          <label>Email
+            <input type="email" name="email" required placeholder="you@example.com" />
+            <span class="field-error"></span>
+          </label>
+          <div class="book-form__nav">
+            <span></span>
+            <button type="button" class="btn btn--primary btn--small" data-next>Continue</button>
+          </div>
+        </fieldset>
+
+        <!-- Step 2 -->
+        <fieldset class="book-form__step" data-step-panel="2">
+          <legend>What's this about</legend>
+          <label>Department
+            <select name="department" required>
+              <option value="">Select a department</option>
+              <option>Cardiology &amp; Vascular</option>
+              <option>Neurology</option>
+              <option>Orthopedics</option>
+              <option>Gastroenterology</option>
+              <option>Pediatrics</option>
+              <option>Maternity</option>
+              <option>General checkup</option>
+            </select>
+            <span class="field-error"></span>
+          </label>
+          <label>Briefly, what's going on?
+            <textarea name="reason" rows="3" placeholder="e.g. Follow-up on blood pressure medication"></textarea>
+          </label>
+          <div class="book-form__nav">
+            <button type="button" class="btn btn--ghost btn--small" data-prev>Back</button>
+            <button type="button" class="btn btn--primary btn--small" data-next>Continue</button>
+          </div>
+        </fieldset>
+
+        <!-- Step 3 -->
+        <fieldset class="book-form__step" data-step-panel="3">
+          <legend>Pick a time</legend>
+          <label>Preferred date
+            <input type="date" name="date" required />
+            <span class="field-error"></span>
+          </label>
+          <label>Preferred time
+            <select name="time" required>
+              <option value="">Select a time</option>
+              <option>Morning (8am &ndash; 11am)</option>
+              <option>Midday (11am &ndash; 2pm)</option>
+              <option>Afternoon (2pm &ndash; 5pm)</option>
+            </select>
+            <span class="field-error"></span>
+          </label>
+          <div class="book-form__nav">
+            <button type="button" class="btn btn--ghost btn--small" data-prev>Back</button>
+            <button type="submit" class="btn btn--primary btn--small">Confirm appointment</button>
+          </div>
+        </fieldset>
+
+        <div class="book-form__success" id="bookSuccess" role="status">
+          <svg viewBox="0 0 24 24" width="40" height="40"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
+          <h3>You're booked.</h3>
+          <p id="bookSuccessDetail">A confirmation is on its way to your email.</p>
+          <button type="button" class="btn btn--ghost btn--small" id="bookAnother">Book another</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap contact__inner">
+      <div>
+        <p class="eyebrow">Visit us</p>
+        <h2>Find Sneharaksha Hospital.</h2>
+        <address>
+          19 SB Nagar<br>
+          Belagavi, Karnataka 590010<br>
+          <a href="tel:+911800123456">1800-123-456 (toll-free)</a><br>
+          <a href="mailto:care@sneharaksha.example">sneharaksha@gmail.com</a>
+        </address>
+        <p class="contact__hours"><strong>Emergency:</strong> Open 24/7<br><strong>Outpatient clinics:</strong> Mon&ndash;Sat, 7am&ndash;8pm</p>
+      </div>
+      <div class="contact__map" aria-hidden="true">
+        <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.567413013792!2d74.52191694999999!3d15.879317449999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbf614a36d7aa09%3A0x1af57fb0d7ef2ac8!2sShivabasava%20Nagar%2C%20Nehru%20Nagar%2C%20Belagavi%2C%20Karnataka%20590016!5e0!3m2!1sen!2sin!4v1784132012562!5m2!1sen!2sin" width="100%" height="260" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="brand brand--footer">
+      <svg class="brand__mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M4 20 H13 L17 8 L23 32 L27 20 H36" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Sneha<em>raksha</em></span>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#departments">Departments</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#book">Book a visit</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <form class="footer-newsletter" id="newsletterForm">
+      <label for="newsletterEmail">Get health tips, monthly</label>
+      <div class="footer-newsletter__row">
+        <input id="newsletterEmail" type="email" placeholder="you@example.com" required />
+        <button type="submit" class="btn btn--primary btn--small">Subscribe</button>
+      </div>
+      <p class="footer-newsletter__note" id="newsletterNote" role="status"></p>
+    </form>
+  </div>
+  <div class="wrap site-footer__bottom">
+    <p>&copy; 2026 Sneharaksha Hospital. This is a demo site built by Sneha S H; all names and details are fictional.</p>
+  </div>
+</footer>
+
+<!-- FLOATING LIVE STATUS -->
+<div class="floating-status" id="floatingStatus">
+  <button class="floating-status__close" id="floatingStatusClose" aria-label="Dismiss live status">&times;</button>
+  <span class="floating-status__dot" aria-hidden="true"></span>
+  <div class="floating-status__body">
+    <p class="floating-status__title" id="floatingStatusTitle">ER wait time: 9 min</p>
+    <p class="floating-status__sub" id="floatingStatusSub">Updated just now</p>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
